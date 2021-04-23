@@ -88,7 +88,7 @@ echo "INPUT_SONARENABLESCAN: $INPUT_SONARENABLESCAN"
 # Build Sonarscanner begin command
 #-----------------------------------
 if [[ "$INPUT_SONARENABLESCAN" == "true" ]]; then
-    sonar_begin_cmd="sonar-scanner -Dsonar.ProjectKey:\"${INPUT_SONARPROJECTKEY}\"-Dsonar.projectName\"${INPUT_SONARPROJECTNAME}\" -Dsonar.login=\"${INPUT_SONARTOKEN}\" -Dsonar.host.url=\"${INPUT_SONARHOSTNAME}\""
+    sonar_begin_cmd="sonar-scanner -Dsonar.ProjectKey=\"${INPUT_SONARPROJECTKEY}\"-Dsonar.projectName=\"${INPUT_SONARPROJECTNAME}\" -Dsonar.login=\"${INPUT_SONARTOKEN}\" -Dsonar.host.url=\"${INPUT_SONARHOSTNAME}\""
     if [ -n "$INPUT_SONARORGANIZATION" ]; then
         sonar_begin_cmd="$sonar_begin_cmd /o:\"${INPUT_SONARORGANIZATION}\""
     fi
